@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 
 def sayHello(request):
-    return render(request , 'hello.html')
+    return render(request , 'hello.html' , {'name' : 'Ahunem Nigussie'})
