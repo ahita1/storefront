@@ -5,10 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "name": "Python Debugger: Django",
+            "type": "debugpy",
             "request": "launch",
-            "name": "Open hello.html",
-            "file": "c:\\Users\\Hp\\Desktop\\storefront\\playground\\templates\\hello.html"
+            "program": "${workspaceFolder}\\manage.py",
+            "args": [
+                "runserver",
+                "9000"
+            ],
+            "django": true,
+            "autoStartBrowser": false
         }
     ]
 }
