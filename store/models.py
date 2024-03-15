@@ -1,6 +1,10 @@
 from django.db import models
 
 # Create your models here.
+class Promotion(models.Model):
+    description = models.CharField(max_length = 255)
+    descount = models.FloatField()
+
 class Collection(models.Model):
     title = models.CharField(max_length = 255)
 
@@ -11,7 +15,9 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6 , decimal_places=2)
     inventory = models.IntegerField()
     last_update = models.DateTimeField(auto_now=True)
-    colection = models.ForeignKey(Collection , on_Delete = models.PROTECT)
+    collection = models.ForeignKey(Collection , on_Delete = models.PROTECT)
+    promotion = models.ManyToManyField(Promotion)
+
 
 class Customer(models.Model):
     MEMBERSHIP_BRONZE = 'B'
